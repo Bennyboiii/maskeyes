@@ -7,19 +7,28 @@
     <title>My Website</title>
     <script src="https://unpkg.com/htmx.org@2.0.0"></script>
     <script src="https://unpkg.com/tailwindcss-cdn@3.4.3/tailwindcss-with-all-plugins.js"></script>
+    <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
   </head>
   <body>
     <main>
-        <h1 class="text-center">Welcome to My Website</h1>
+      <h1 
+        class="text-center text-3xl">
+        Maskeyes
+      </h1>
 
-        <div id="user-info" class="box">
-            <p>Test</p>
-        </div>
+      <div id="user-info" class="box">
+          <p>Test</p>
+      </div>
 
-        <button
-        hx-get="/user-info" hx-target="#user-info" hx-swap="innerHTML"
-        class="p-6 bg-slate-300 rounded-lg"
-        >CLICK ME</button>
+      <button
+        hx-get="/user-info" 
+        hx-target="#user-info" 
+        hx-swap="innerHTML"
+        class="p-6 bg-slate-400 rounded-lg"
+        script="on click increment :x then put it into the next <output/>">
+        CLICK ME
+      </button>
+      <output>  </output>
     </main>
   </body>
 </html>
